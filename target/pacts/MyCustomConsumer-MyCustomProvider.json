@@ -1,0 +1,80 @@
+{
+  "consumer": {
+    "name": "MyCustomConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request for hotel details",
+      "providerStates": [
+        {
+          "name": "A hotel exists"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/data/1"
+      },
+      "response": {
+        "body": {
+          "id": 123,
+          "location": "Delhi",
+          "name": "hello world"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.location": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.6.6"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "MyCustomProvider"
+  }
+}
