@@ -4,10 +4,10 @@
   },
   "interactions": [
     {
-      "description": "A request for hotel details",
+      "description": "Request to get data",
       "providerStates": [
         {
-          "name": "A hotel exists"
+          "name": "Hello world application"
         }
       ],
       "request": {
@@ -29,7 +29,7 @@
               "combine": "AND",
               "matchers": [
                 {
-                  "match": "type"
+                  "match": "integer"
                 }
               ]
             },

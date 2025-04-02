@@ -22,22 +22,22 @@ public class ConsumerContractTest {
     @Pact(consumer = "MyCustomConsumer")
     public RequestResponsePact createPact(PactDslWithProvider builder) {
         return builder
-                .given("A hotel exists")
-                .uponReceiving("A request for hotel details")
+                .given("Hello world application")
+                .uponReceiving("Request to get data")
                 .path("/data/1")
                 .method("GET")
                 .willRespondWith()
                 .status(200)
                 .body(new PactDslJsonBody()
-                        .like("name", "hello world")
-                        .like("id", 123)
-                        .like("location", "Delhi")
+                        .stringType("name", "hello world")
+                        .integerType("id", 123)
+                        .stringType("location", "Delhi")
                 )
                 .toPact();
     }
 
     @Test
-    void testHotelBookingConsumer(MockServer mockServer) throws IOException {
+    void teststatuscodeforapplication(MockServer mockServer) throws IOException {
         URL url = new URL(mockServer.getUrl() + "/data/1");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");

@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: product-service
+
+  router:
+    swagger:
+      enabled: true
+
+  server:
+    port: 9090
+  http:
+    client:
+      read-timeout: 60s
+    server:
+      read-timeout: 60s
+swagger:
+  enabled: true
+  endpoints:
+    enabled: true

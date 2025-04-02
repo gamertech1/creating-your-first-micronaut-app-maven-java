@@ -12,10 +12,9 @@ import io.micronaut.test.annotation.MockBean;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import jakarta.inject.Inject;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+
 
 @MicronautTest
 class HelloControllerTest {
