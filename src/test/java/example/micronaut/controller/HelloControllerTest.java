@@ -29,7 +29,7 @@ class HelloControllerTest {
     @BeforeEach
     void setup() {
         // Mock behavior: When helloService.sayHello() is called, return "Mocked Hello"
-        when(helloService.sayHello()).thenReturn("Mocked Hello");
+        when(helloService.getMessage()).thenReturn("Mocked Hello");
     }
 
     @Test

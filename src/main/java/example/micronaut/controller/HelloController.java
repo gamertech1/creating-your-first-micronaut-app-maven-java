@@ -15,7 +15,7 @@ public class HelloController {
 
     @Get("/hello")
     public String hello() {
-        return helloService.sayHello();
+        return helloService.getMessage();
     }
 
     @Get("/hello/greet")

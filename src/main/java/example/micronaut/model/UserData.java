@@ -1,9 +1,13 @@
 package example.micronaut.model;
 
+import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable;
+import jakarta.validation.constraints.NotBlank;
 
 @Serdeable
+@Introspected
 public class UserData {
+    @NotBlank(message = "Should not be empty")
     private String name;
     private int id;
     private String location;

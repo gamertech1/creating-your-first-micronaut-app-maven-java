@@ -47,4 +47,16 @@ class DataControllerTest {
         assertEquals(102, response.body().getId());
         assertEquals("New Wales", response.body().getLocation());
     }
+    @Test
+    void testGetUserData_withemptyName() {
+        HttpRequest<String> request = HttpRequest.GET("/data/1");
+        HttpResponse<UserData> response = client.toBlocking().exchange(request, Argument.of(UserData.class));
+
+        assertNotNull(response);
+        assertEquals(200, response.getStatus().getCode());
+        assertNotNull(response.body());
+        assertEquals("John Doe", response.body().getName());
+        assertEquals(101, response.body().getId());
+        assertEquals("New York", response.body().getLocation());
+    }
 }
